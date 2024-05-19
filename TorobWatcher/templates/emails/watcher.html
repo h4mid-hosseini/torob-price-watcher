@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Update Notification</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="mt-4">The Price Is What You Want for {{ product.title }}!</h2>
+                <p>Product Name: {{ product.title }}</p>
+                <p>Current Price: {{ lowest_offer }}</p>
+                <p>Your Demanded Price: {{ product.notice_price }}</p>
+                <p>Current Date Time: {{ current_datetime }}</p>
+                <a href="{{ product.url }}" class="btn btn-success">Check Product</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
