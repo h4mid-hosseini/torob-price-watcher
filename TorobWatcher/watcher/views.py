@@ -17,7 +17,7 @@ def update_product_price(request):
 
 
 
-@login_required
+@login_required(login_url='/login/')
 def current_product_under_watch(request):
     products = models.WatchingProducts.objects.filter(user = request.user)
 
@@ -25,13 +25,13 @@ def current_product_under_watch(request):
 
 
 
-@login_required
+@login_required(login_url='/login/')
 def edit_under_watch_product(request, pk):
     product = models.WatchingProducts.objects.filter(pk=pk, user=request.user)
 
 
 
-@login_required
+@login_required(login_url='/login/')
 def delete_under_watch_product(request, pk):
     product = models.WatchingProducts.objects.filter(pk=pk, user=request.user).first()
 
@@ -45,7 +45,7 @@ def delete_under_watch_product(request, pk):
 
 
 
-@login_required
+@login_required(login_url='/login/')
 def create_watching_product(request):
     if request.method == 'POST':
         data = request.POST
