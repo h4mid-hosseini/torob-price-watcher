@@ -5,6 +5,10 @@ from django.contrib import messages
 from . import watcher, models, forms
 
 
+def home(request):
+    return render(request, 'index.html')
+
+
 
 def update_product_price(request):
     watcher.release_dogs()
